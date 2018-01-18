@@ -12,7 +12,17 @@ import java.awt.event.MouseListener;
  */
 public class ButtonFactory {
     public enum Operation {
-        PLUS, MINUS, TIMES, DIVIDE
+        PLUS("+"),
+        MINUS("-"),
+        TIMES("*"),
+        DIVIDE("/"),
+        EQUAL("=");
+
+        public String label;
+
+        private Operation(String label) {
+            this.label = label;
+        }
     }
 
     private ButtonFactory() {
@@ -69,6 +79,10 @@ public class ButtonFactory {
             this.number = number;
             setLabel(number + "");
         }
+
+        public int getNumber(){
+            return this.number;
+        }
     }
 
     static class OpeButton extends CalButton {
@@ -77,26 +91,10 @@ public class ButtonFactory {
         private OpeButton(Board board, Operation operation) {
             super(board);
             this.operation = operation;
-            String label = "";
-            switch (operation) {
-                case PLUS: {
-                    label = "+";
-                    break;
-                }
-                case MINUS: {
-                    label = "-";
-                    break;
-                }
-                case TIMES: {
-                    label = "*";
-                    break;
-                }
-                case DIVIDE: {
-                    label = "/";
-                    break;
-                }
-            }
-            setLabel(label);
+            setLabel(operation.label);
+        }
+        public Operation getOperation(){
+            return this.operation;
         }
 
     }

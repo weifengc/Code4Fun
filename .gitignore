@@ -1,3 +1,4 @@
 *.idea
 *.iml
 /Calculator/mvn/calculator/target/*
+*.DS_Store
