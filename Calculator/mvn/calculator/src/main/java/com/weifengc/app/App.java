@@ -8,6 +8,7 @@ import com.weifengc.app.baseWindow.ChildFrame;
 public class App {
     public static void main(String[] args) {
 //        new HelloWorldFrame();
-        new ChildFrame();
+//        new ChildFrame();
+    new Board();
     }
 }
